@@ -1,21 +1,16 @@
-name: CI
+name: Chell
 on:
    push:
     branches: [ "main" ]
-   pull_request:
-    branches: [ "main" ]   
-   workflow_dispatch:
-
 jobs:
-  build:
+  hemy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: hellcat
+        id: scatpack
+        run: echo a=a >> $GITHUB_OUTPUT
+      - name: hellcat2
+        run: echo ${{steps.scatpack.outputs.a}}
+          
 
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
