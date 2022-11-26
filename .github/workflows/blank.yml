@@ -12,5 +12,12 @@ jobs:
         run: echo a=a >> $GITHUB_OUTPUT
       - name: hellcat2
         run: echo ${{steps.scatpack.outputs.a}}
-          
+      
+      - name: candition
+        if:   runner.os == 'Windows'
+        run: echo "Tis operation sistem on the runner is $RUNNER_OS"
+
+      - name: candition2
+        if: runner.os !='Windos'
+        run: echo "Tis operation sistem in not windows it is $RUNNER_OS"
 
