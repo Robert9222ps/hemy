@@ -1,21 +1,17 @@
-name: CI
-on:
-   push:
-    branches: [ "main" ]
-   pull_request:
-    branches: [ "main" ]   
-   workflow_dispatch:
+name: rrt
+  
+on:[push]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+jobs: 
+ my_test:
+    runs_on: ubuntu-latest
+     steps:
+      - name: cat
+        id: fff
+        run: echo a=a >> $GITHUB_OUTPUT
 
-    steps:
-      - uses: actions/checkout@v3
+      - name: ham
+        run: echo ${{steps.fff.outputs.a}}
+    
 
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+ 
