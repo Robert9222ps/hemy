@@ -1,6 +1,6 @@
 name: rrt
   
-on:[push]
+on: [push]
 
 jobs: 
  my_test:
