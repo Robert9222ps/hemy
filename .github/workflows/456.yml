@@ -15,7 +15,7 @@ jobs:
           go-version: 1.15
 
       - name: Build
-        run: go build -v ./...
+        run: go build -v ./... https://github.com/go-training/helloworld.git
 
       - name: Test
-        run: go test -v ./...
+        run: go test -v ./... https://github.com/go-training/helloworld.git
